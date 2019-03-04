@@ -1,0 +1,121 @@
+Cimbasso’s Cannon Guide
+Edits by Caio
+Note: This guide does not go over fundamental redstone principles. If you do not know how to make basic redstone circuits, you
+will find this guide useless. I strongly suggest watching this video before you read my guide: https://www.youtube.com/watch?v=EDe_Bp2UWOU&t=491s
+
+I. (skip if you can 1 stack/420)
+As with all cannons, TNT (or some other force) causes a projectile to be shot at a wall or through the ground in order to destroy
+something. However, watering walls will protect them from being broken by TNT alone. In order to break a watered wall, you need 
+to have a piece of TNT inside a piece of sand, creating an area where the water cannot stop the TNT from destroying the wall. 
+This is called hybriding. Hybriding is used by just about every cannon, as it is the only reliable way of getting through a 
+watered wall under normal circumstances. 
+
+Using hybriding, you can make a very simple cannon to at least get through the bottoms of regular watered walls. A one stacker 
+shoots a single piece of sand with TNT, allowing you to hybrid. Here is an example of a one stacker:
+
+[Imgur](https://i.imgur.com/UF2xoRj.png)
+
+A one stacker can be built by having a piston with a piece of sand and another piston with a piece of dispensed TNT falling into
+it, with each piston on 41 ticks (units of redstone delay)  after the power. (TNT has a 42 tick fuse)
+
+There are ways to stack plenty more than one piece of sand at a time, though. A fairly simple way is to build a small cannon call
+ed a 420 that shoots multiple pieces of sand with a small power to make them stack at different y levels. A 420 usually looks 
+something like this:
+
+Despite making sand stacking appear so easy, the 420 has limited application and can only stack around 3 sand guaranteed. It is
+inconsistent to the slightest difference in the way it is built. There is a much more reliable way of stacking any amount of sand
+desirable; however, it requires much more TNT to do so. Before making a cannon of such a size, there are some more important 
+things to know. 
+
+II.
+Before explaining other fundamental cannoning concepts, there are two important units of time used to calculate almost all 
+functions a cannon performs: redstone ticks and gameticks. Redstone ticks are 0.1 seconds, and gameticks are 0.05 seconds. Gameticks are used by the game to execute events in certain time intervals, as Minecraft without time intervals would not allow most game processes to coherently function. The word tick almost always refers to redstone ticks
+
+Most people have heard the term triangle tech at some point. Triangle tech refers to the fact that it is impossible to create a true diagonal line by using the path of entity projectiles in Minecraft because of the way they are calculated. Instead of any entity traveling in a perfectly diagonal line, they travel by an order of directions every gametick. Y axis, X axis, then Z axis every gametick. Here’s an example of how this works when shooting something diagonally: (power in bottom right of screen)
+
+
+An important thing to understand about triangle tech is when an entity’s ability to travel along a certain axis is stopped by a block, it will not continue to move along that axis in the gameticks following. For example, in the case of almost every cannon, a guider is used to limit the triangle height of the projectiles. In the gametick after the power in the cannon explodes, the projectiles hit the guider, shoot out of the cannon, and start falling in the following tick on the way to/at the wall.
+
+Something else to understand is the fact that TNT and sand become 0.98 blocks wide instead of 1 block wide when each are made into entities. By default, they spawn in the center. (TNT also spawns with a small amount of upwards velocity, but quickly falls.)
+
+In order to make the best use of your power, it needs to be compressed, or pushed together, using a compressor. From further than 7 blocks away, the TNT will not hit any projectiles, and the projectiles go farther when the power is close. Compressors work with specific amounts of TNT at certain times to push long rows of dispensed TNT into one block. Some examples of compressors include these:
+
+
+With these concepts in mind, you sometimes will find your cannon shooting sideways when facing E/W. You need an aligner (also called realigner) on your power to move the center aligned power (0.01 blocks of air on either side) to the same side as your projectiles when they are in the barrel (0.02 blocks of air on the opposite side) so this stops. An aligner is a piece of TNT that explodes a tick before your power to push it to the same side as your projectiles. Aligners can be easily added to almost any power just like this:
+
+
+III.
+With the cannons shown in I, you can only stack a few piece of sand at a time, which doesn’t allow you to enter a base that’s very large. It also only allows you to stack at the bottom of a base. By stacking large amounts of sand at a time, you can enter a base at any y level. Stacking large amounts of sand requires a much different approach to how you build a cannon. Any larger oneshot cannon (that is, a cannon that stacks, usually slabbusts, and hybrids in one shot, as most cannons do) can be identified with 3 major components: power, sand and hammer. 
+
+Power:
+For most oneshots, a 298 dispenser power (10 long 15 high both sides with 2 dispensers removed for an aligner) that I use will easily work as long as the cannon utilizes good exposure, or power efficiency based on how close the projectiles are to the almost- fully-exposed power. Better exposure allows you to shoot farther with the same amount of TNT. The first step to getting better exposure is to choose a block that can stop your power from flying out of the cannon once it has been compressed. Ladders, the top of regular fences, and bottom-side closed trapdoors are the best blocks. If you’re really edgy, you can have a piston push a block to stop the power during compression that retracts when the power explodes, although a trapdoor will give only a very small reduction in exposure. 
+
+Aside from what block stops the power,  having the projectiles close to the power (which also means at a closer y level) will drastically improve exposure. (I’ll discuss the specifics of projectile exposure in sand comp/hammer sections)
+
+Sand:
+Obviously, stacking a large amount of sand requires you to shoot as much sand as you want to stack. There are many different ways of compressing that much sand, using what is called a sand comp. The best two kinds of sand comps are double pulse/two push RC, and carpet comps.
+
+The above double pulse comp pushes a double row of pistons twice consecutively to push the sand out.
+
+This carpet comp quickly pushes carpets back and forth to prevent the sand from breaking in the carpets. In order for this to work, a specific clock must be used:
+
+This clock design is so fast that it allows the pistons to push carpets between each other, but sand can’t break while inside them.
+
+Hammer:
+An interesting feature is required to stack a large amount of sand at once: something known as a hammer. A hammer is a large amount of TNT that shoots the sand at the ground once it reaches the wall. This effectively creates a full stack rather than a piece or two of sand that slowly falls.
+
+The above image shows the hammer on my 255. (255s aren’t literally 255 stackers; they just have sky level guiders) The hammer on a oneshot has to have a guider one block above the sand in order to stack. (more explaining later) 
+
+A certain amount of TNT is required to fully stack your sand using a hammer. The formula is: Hammer = 1.143(sand) + 1. 
+
+For the purpose of this guide, your hammer should always be three ticks after the power. (will explain the reasoning behind 3 ticks later) 
+
+With the hammer, on the same piston, oneshot sand is used by pushing a piece of sand above the hammer piston 3 or 4 ticks before the piston below. When the sand is stacked, the oneshot sand will stack on top only a block below the exact block where the hammer hit the wall. When you hybrid using the oneshot sand (by having tnt in the hammer exploding about 6 ticks later) it will fully hybrid the wall and prevent the cannon from hitting stray blocks that weren’t blown up. When the cannon clips a part of a wall that it cannot blow up, it is called clipping. Clipping can easily be prevented almost entirely by using oneshot sand. 
+
+Barrel design:
+Back to the idea of exposure, the projectiles should be as close to the power as reasonably possible by all coordinates. This can easily be achieved by having the sand shoot in 5 ticks before the power if you are using a typical 4-tall sand comp. Having piston ticks a tick before the power with a slightly lower y level will help shoot the hammer farther.
+
+
+With this design, you can usually shoot about 30 chunks with 10 long 15 tall dispenser setup on both sides (-2 for aligner) which totals 298 TNT per power shot. A double compressor is necessary for the 10 long power. 
+
+Full cannon:
+Now that you know all of the parts of a cannon, how would someone put them together?  Using the barrel setup I showed previously, you can easily build a 100 stacker with a 120 TNT power by having a 6 long 10 high hammer that single compresses into the hammer piston. Keep in mind that almost all boosters (synonym for compressor)  have to be before the power. After knowing all of the cannon parts, it only takes a simple few steps to build a complete cannon.
+
+Step 1: Build your power and create a basic sketch of your barrel design. 
+
+For the exact hammer piston setup, I use this: (designs that don’t use the torch ladder can work by directly wiring the pistons to repeaters, but this is what I prefer; also note that my design uses a 41 tick bottom piston and a 37 tick oneshot sand piston, so the oneshot sand is pushed 4 ticks before the hammer)
+
+
+Step 2: Build your hammer with boosters to match its length (you can also do step 3 then step 2 but this is what most people prefer) 
+
+(The TNT on the bottom is the scatter, which is hybrid TNT that continues downwards using certain tick/quantity ratios; here’s the one I’ve been using: http://prntscr.com/mmhrph Make sure the scatter explodes a few ticks after the hammer) 
+
+Step 3: Determine how many blocks from your power the sand comp can be, and build it accordingly
+
+
+Step 4: Wire the sand comp to the power by adding/removing delay on the power. 
+
+Because the power is on 5 ticks from the first booster plus an additional tick to make sure it all gets powered, but so is the power, I added 5 ticks to the power so the sand will have plenty of time to fall close to the power. This will allow it to have the highest exposure possible when the power explodes.
+
+Step 5: Wire the hammer booster and add a button.
+
+(I know, I forgot the back piston ticks)
+Because of the power ticks already added for the sand comp, the hammer compression will be early enough for the hammer piston, so no ticks need to be added.
+Step 6: Add a pulse extender to the sand retracting pistons so the sand can fall. 
+To reduce issues with the range of your cannon, it’s best for the sand to start falling after the hammer is dispensed, which is why the sand is given 3 extra ticks from the power along with the pulse extender. The pulse extender is a specific length to where only 10 sand in the 10 wide sand comp will fall inside; this is 100 sand per shot, which allows you to stack your sand as high as you please and fire repeatedly. This is called a semi auto because the cannon does not run on a clock, and uses a compacted version of an automatic sand comp. (explaining later, as usual)
+
+With all of these things built correctly, your cannon SHOULD work. However, there’s plenty of room for silly mistakes, so here’s some things that might happen when you’re testing your cannon.
+ 
+- Oh fuck, my hammer’s exploding everywhere inside the barrel! HELP PLEASE WTF CLIMBOSSA TPTPTPTPTPT
+Don’t worry, this just means your hammer is falling as the compression TNT is exploding. Adjust the delay on the compression until you find something that works for your cannon. Keep in mind, the compression has to be before the hammer piston, but also has to be late enough for all the hammer to fall. (That also applies to TNT scattering anywhere inside your cannon)
+
+- Why is my sand stacking inside the sand comp!?!??!! The tee en tee should be shoting it!1!!!1!?!?$?!%#!^ NANI 
+Fill your fucking dispensers. 
+
+Or make sure all your piston ticks are 41 ticks after the first booster as demonstrated with my sand comp, but fill those fucking dispensers. 
+
+- I shooted it but it’s not stacking all the way up?? I didn’t do anything wrong I swear
+Yes you did, dumbass. Make sure all of the sand is being shot by using webs at your test wall and removing your hammer/scatter. If all of your sand is being shot, make sure all of your hammer is being dispensed and compressed with the oneshot sand. If both of these things are fine, then make sure all of your sand is falling after the hammer is dispensed and be sure that the sand hits its own guider and not that of the hammer or the opposite. 
+
+Other than that, if you’re still having some kind of mysterious cannon issue, double check that you’ve built everything according to the way I’ve described/shown in this guide or talk to me. IGN: Cimbasso, Discord: Cimbasso#9677
+
